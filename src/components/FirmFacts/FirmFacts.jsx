@@ -42,10 +42,10 @@ const FirmFacts = ({ data = [] }) => {
 FirmFacts.propTypes = {
     data: PropTypes.arrayOf(
         PropTypes.shape({
-            id: PropTypes.text.isRequired,
-            cardVariant: PropTypes.text,
-            buttonVariant: PropTypes.text.isRequired,
-            buttonText: PropTypes.text.isRequired,
+            id: PropTypes.string.isRequired,
+            cardVariant: PropTypes.string,
+            buttonVariant: PropTypes.string.isRequired,
+            buttonText: PropTypes.string.isRequired,
             isDisabled: PropTypes.bool,
         }).isRequired
     ).isRequired

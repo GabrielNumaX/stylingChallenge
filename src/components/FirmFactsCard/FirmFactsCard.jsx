@@ -42,11 +42,11 @@ const FirmFactsCard = ({
 }
 
 FirmFactsCard.propTypes = {
-    variant: PropTypes.text,
-    id: PropTypes.text,
-    buttonText: PropTypes.text,
-    buttonVariant: PropTypes.text,
-    text: PropTypes.text,
+    variant: PropTypes.string,
+    id: PropTypes.string,
+    buttonText: PropTypes.string,
+    buttonVariant: PropTypes.string,
+    text: PropTypes.string,
     buttonDisabled: PropTypes.bool,
 }
 

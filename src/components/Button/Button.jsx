@@ -46,9 +46,9 @@ const Button = ({
 }
 
 Button.propTypes = {
-    variant: PropTypes.text,
-    cardVariant: PropTypes.text,
-    text: PropTypes.text,
+    variant: PropTypes.string,
+    cardVariant: PropTypes.string,
+    text: PropTypes.string,
     isDisabled: PropTypes.bool,
     isHovered: PropTypes.bool,
 }
