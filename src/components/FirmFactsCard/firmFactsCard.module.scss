@@ -1,51 +1,59 @@
-@use '../../styles/variables.scss' as vars;
+@use "../../styles/variables.scss" as vars;
+@use "../../styles/animations.scss" as mixin;
 
-.cardsContainer {
-    height: 100%;
+.card {
+    background: vars.$fontColor;
+    padding: vars.$cardPadding;
     display: grid;
-    justify-items: stretch;
-    align-items: stretch;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    column-gap: 1.8rem;
-    row-gap: 1.8rem;
-    grid-template-areas:
-        "full first-top second-top third-top"
-        "full fourth-bottom fifth-bottom sixth-bottom";
+    align-content: center;
+    justify-content: center;
 
-    .card {
-        background: vars.$fontColor;
-        padding: vars.$cardPadding;
-        align-content: center;
-        justify-content: center;
+    &.defaultVariant {
+        @include mixin.animation(backgroundAnimation, vars.$fontColor, vars.$hoverGreen);
+    
+        &:hover {
+            animation: backgroundAnimation 1.4s ease-in-out 80ms;
+            animation-fill-mode: forwards;
+        }
     }
 
-    .card:first-of-type {
-        grid-area: full;
-        // background: red;
+    &.borderVariant {
+        @include mixin.animationCardBorder(borderCard, vars.$hoverGreen);
+
+        align-content: start;
+        padding-top: 5rem;
+
+        &:hover {
+            animation: borderCard 1.4s ease-in-out 80ms;
+            animation-fill-mode: forwards;
+        }
     }
-    .card:nth-of-type(2) {
-        grid-area: first-top;
-        // background: blue;
-    }
-    .card:nth-of-type(3) {
-        grid-area: second-top;
-        // background: green;
-    }
-    .card:nth-of-type(4) {
-        grid-area: third-top;
-        // background: yellow;
-    }
-    .card:nth-of-type(5) {
-        grid-area: fourth-bottom;
-        // background: pink;
-    }
-    .card:nth-of-type(6) {
-        grid-area: fifth-bottom;
-        // background: rebeccapurple;
-    }
-    .card:nth-of-type(7) {
-        grid-area: sixth-bottom;
-        // background: yellowgreen;
+
+    &.borderVariantButtonDisabled {
+        align-content: start;
+        padding-top: 5rem;
     }
 }
+
+.card:first-of-type {
+    grid-area: full;
+}
+.card:nth-of-type(2) {
+    grid-area: first-top;
+}
+.card:nth-of-type(3) {
+    grid-area: second-top;
+}
+.card:nth-of-type(4) {
+    grid-area: third-top;;
+}
+.card:nth-of-type(5) {
+    grid-area: fourth-bottom;
+}
+.card:nth-of-type(6) {
+    grid-area: fifth-bottom;
+}
+.card:nth-of-type(7) {
+    grid-area: sixth-bottom;
+}
+

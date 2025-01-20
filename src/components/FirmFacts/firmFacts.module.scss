@@ -45,7 +45,17 @@ h1 {
     margin: 2.2rem 0 5.1rem;
 }
 
-.cardsWrapper {
+.cardsContainer {
     width: 100%;
     height: 662px;
+    display: grid;
+    justify-items: stretch;
+    align-items: stretch;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 1.8rem;
+    row-gap: 1.8rem;
+    grid-template-areas:
+        "full first-top second-top third-top"
+        "full fourth-bottom fifth-bottom sixth-bottom";
 }

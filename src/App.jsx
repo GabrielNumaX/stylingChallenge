@@ -1,10 +1,11 @@
-import FirmFacts from "./components/FirmFacts"
+import FirmFacts from "./components/FirmFacts";
+import data from './assets/data';
 
 function App() {
 
   return (
     <>
-    <FirmFacts></FirmFacts>
+      <FirmFacts data={data} />
     </>
   )
 }

@@ -1,0 +1,48 @@
+
+@mixin animation($name, $value01, $value02) {
+    @keyframes #{$name} {
+      0% {
+        background: $value01;
+    }
+    100% {
+          background: $value02;
+      }
+    }
+}
+@mixin animationBorder($name, $value01, $value02, $value03) {
+    @keyframes #{$name} {
+      0% {
+        background: $value01;
+        border: 0px solid $value01;
+    }
+    100% {
+        background: $value03;
+        border: 2px solid $value02;
+      }
+    }
+}
+
+@mixin animationCardBorder($name, $value01) {
+    @keyframes #{$name} {
+      0% {
+        border: 0px solid $value01;
+    }
+    100% {
+        border: 15px solid $value01;
+        padding: 1.2rem;
+        padding-top: 3.5rem;
+      }
+    }
+}
+
+@mixin animationButton($name, $value01, $value02) {
+    @keyframes #{$name} {
+      0% {
+        background:  $value01;
+    }
+    100% {
+       background: $value02;
+      }
+    }
+}
+

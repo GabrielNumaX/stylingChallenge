@@ -1,55 +1,42 @@
 
+import { useState } from 'react';
+import cx from 'classnames';
 import Button from '../Button';
 import styles from './firmFactsCard.module.scss';
 
 
-const FirmFactsCard = (props) => {
+const FirmFactsCard = ({
+    variant, 
+    id, 
+    buttonText, 
+    buttonVariant,
+    buttonDisabled,
+}) => {
+
+    const [isHovered, setIsHovered] = useState(false);
+
+    const handleOnHover = () => setIsHovered(prevState => !prevState)
+
+    const isDefaultVariant = variant === 'default';
+    const isBorderVariant = variant === 'border';
+
+    const cardClassnames = cx(styles.card, {
+        [styles.defaultVariant]: isDefaultVariant,
+        [styles.borderVariantButtonDisabled]: buttonDisabled,
+        [styles.borderVariant]: !buttonDisabled && isBorderVariant,
+    })
 
     return (
-        <section className={styles.cardsContainer}>
-            <div className={styles.card}>
-                <Button text={'This is a two line button that has a really long text and it ellipsisi'} 
-                variant="icon"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a two line button that has a really long text and it ellipsisi'}
-                    variant="icon"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a one line button that has a really long text'}
-                    variant="default"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a two line button that has a really long text and it ellipsisi'}
-                    variant="icon"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a two line button that has a really long text and it ellipsisi'}
-                    variant="icon"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a two line button that has a really long text and it ellipsisi'}
-                    isDisabled
-                    variant="icon"
-                />
-            </div>
-            <div className={styles.card}>
-                <Button
-                    text={'This is a two line button that has a really long text and it ellipsisi'}
-                    variant="icon"
-                />
-            </div>
-        </section>
+        <div className={cardClassnames} onMouseEnter={handleOnHover} onMouseLeave={handleOnHover}>
+            <Button
+            key={id}
+            variant={buttonVariant}
+            text={buttonText}
+            isDisabled={buttonDisabled} 
+            isHovered={isHovered}
+            cardVariant={variant}
+            />
+        </div>
     )
 }
 

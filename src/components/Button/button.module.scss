@@ -1,4 +1,5 @@
 @use "../../styles/variables.scss" as vars;
+@use "../../styles/animations.scss" as mixin;
 
 .buttonMain {
     display: flex;
@@ -19,6 +20,18 @@
         &:hover {
             cursor: unset;
         }
+    }
+
+    &.isTopRowCard {
+        @include mixin.animationBorder(borderAnimation, vars.$btnBackground, vars.$fontColor, vars.$hoverGreen);
+        animation: borderAnimation 1.4s ease-in-out 80ms;
+        animation-fill-mode: forwards;
+    }
+
+    &.isBottomRowCard {
+        @include mixin.animationButton(buttonAnimation, vars.$btnBackground, vars.$hoverGreen);
+        animation: buttonAnimation 1.4s ease-in-out 80ms;
+        animation-fill-mode: forwards;
     }
 }
 
@@ -44,7 +57,7 @@
     white-space: wrap;
     overflow: hidden;
     text-overflow: clip;
-    
+
     &.iconVariant {
         margin-left: 1.9rem;
         text-align: left;
@@ -53,7 +66,7 @@
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
-                line-clamp: 2;
+        line-clamp: 2;
         -webkit-box-orient: vertical;
-     }
+    }
 }
