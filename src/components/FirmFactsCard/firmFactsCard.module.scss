@@ -18,11 +18,10 @@
     }
 
     &.borderVariant {
-        @include mixin.animationCardBorder(borderCard, vars.$hoverGreen);
-
         align-content: start;
         padding-top: 5rem;
-
+        
+        @include mixin.animationCardBorder(borderCard, vars.$hoverGreen);
         &:hover {
             animation: borderCard 1.4s ease-in-out 80ms;
             animation-fill-mode: forwards;

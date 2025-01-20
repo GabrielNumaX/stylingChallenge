@@ -1,4 +1,5 @@
 import cx from 'classnames';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons/faMagnifyingGlass';
 import styles from './button.module.scss';
@@ -39,6 +40,16 @@ const Button = ({
             </p>
         </button>
     )
+
+
+    
 }
 
+Button.propTypes = {
+    variant: PropTypes.text,
+    cardVariant: PropTypes.text,
+    text: PropTypes.text,
+    isDisabled: PropTypes.bool,
+    isHovered: PropTypes.bool,
+}
 export default Button;

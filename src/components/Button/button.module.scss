@@ -23,15 +23,15 @@
     }
 
     &.isTopRowCard {
-        @include mixin.animationBorder(borderAnimation, vars.$btnBackground, vars.$fontColor, vars.$hoverGreen);
         animation: borderAnimation 1.4s ease-in-out 80ms;
         animation-fill-mode: forwards;
+        @include mixin.animationBorder(borderAnimation, vars.$btnBackground, vars.$fontColor, vars.$hoverGreen);
     }
 
     &.isBottomRowCard {
-        @include mixin.animationButton(buttonAnimation, vars.$btnBackground, vars.$hoverGreen);
         animation: buttonAnimation 1.4s ease-in-out 80ms;
         animation-fill-mode: forwards;
+        @include mixin.animationButton(buttonAnimation, vars.$btnBackground, vars.$hoverGreen);
     }
 }
 

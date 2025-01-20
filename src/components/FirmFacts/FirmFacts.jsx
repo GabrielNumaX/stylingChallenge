@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import FirmFactsCard from '../FirmFactsCard/FirmFactsCard';
 
 import styles from './firmFacts.module.scss';
@@ -13,7 +14,7 @@ const FirmFacts = ({ data = [] }) => {
             buttonVariant={item.buttonVariant}
             buttonDisabled={item?.isDisabled}
         />
-        )
+    )
 
     return (
         <main className={styles.container}>
@@ -36,6 +37,18 @@ const FirmFacts = ({ data = [] }) => {
 
         </main>
     )
+}
+
+FirmFacts.propTypes = {
+    data: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.text.isRequired,
+            cardVariant: PropTypes.text,
+            buttonVariant: PropTypes.text.isRequired,
+            buttonText: PropTypes.text.isRequired,
+            isDisabled: PropTypes.bool,
+        }).isRequired
+    ).isRequired
 }
 
 export default FirmFacts;

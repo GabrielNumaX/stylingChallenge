@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import Button from '../Button';
 import styles from './firmFactsCard.module.scss';
@@ -38,6 +39,15 @@ const FirmFactsCard = ({
             />
         </div>
     )
+}
+
+FirmFactsCard.propTypes = {
+    variant: PropTypes.text,
+    id: PropTypes.text,
+    buttonText: PropTypes.text,
+    buttonVariant: PropTypes.text,
+    text: PropTypes.text,
+    buttonDisabled: PropTypes.bool,
 }
 
 export default FirmFactsCard;
