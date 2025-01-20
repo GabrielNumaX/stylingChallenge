@@ -1,3 +1,5 @@
+import FirmFactsCard from '../FirmFactsCard/FirmFactsCard';
+
 import styles from './firmFacts.module.scss';
 
 const FirmFacts = () => {
@@ -16,6 +18,8 @@ const FirmFacts = () => {
             <hr className={styles.hrLine}></hr>
 
             <section className={styles.cardsWrapper}>
+
+                <FirmFactsCard></FirmFactsCard>
                 
             </section>
 
