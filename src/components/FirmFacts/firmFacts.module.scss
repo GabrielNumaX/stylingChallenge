@@ -1,0 +1,52 @@
+@use '../../styles/variables' as vars;
+
+.container {
+    background: vars.$mainBackground;
+    min-height: 100vh;
+    padding: 0 8.5rem 8.5rem;
+}
+
+.iconWrapper {
+    padding-top: 5rem;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.iconContainer {
+    position: relative;
+    width: 4.4rem;
+    height: 4.4rem;
+    right: -2.2rem;
+
+    .iconClose {
+        position: absolute;
+        background: vars.$fontColor;
+        top: 2.2rem;
+        right: -0.8rem;
+        height: 1px;
+        width: 5.8rem;
+        transform: rotate(45deg);
+
+        &:nth-of-type(2) {
+            transform: rotate(-45deg);
+        }
+    }
+}
+
+h1 {
+    font-size: 6rem;
+    line-height: 6.6rem;
+    padding-top: 3.3rem;
+}
+
+.hrLine {
+    height: 1px;
+    opacity: 0.2;
+    margin: 2.2rem 0 5.1rem;
+}
+
+.cardsWrapper {
+    background: whitesmoke;
+    width: 100%;
+    height: 662px;
+}
